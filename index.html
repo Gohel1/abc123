@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+
+        }
+
+        .nav {
+            background-color: #131921;
+            width: 100%;
+            height: 61px;
+            display: flex;
+        }
+
+        .first {
+            display: flex;
+
+            margin-top: 4px;
+            margin-left: 12px;
+
+            height: 51px;
+            width: 135px;
+        }
+
+        .first:hover {
+            border: 1px solid rgb(255, 255, 255);
+        }
+
+        .sen1 {
+            margin-top: 17px;
+            margin-left: 4px;
+            font-weight: 100;
+            font-family: sans-serif;
+            color: azure;
+        }
+
+        .first2 {
+            display: flex;
+
+            margin-top: 4px;
+            margin-left: 6px;
+            padding-top: 9px;
+            height: 51px;
+            width: 155px;
+        }
+
+        .first2:hover {
+            border: 1px solid rgb(255, 255, 255);
+        }
+
+        .amazlogo {
+            height: 40px;
+            width: 100px;
+            padding-left: 5px;
+            padding-top: 16px;
+
+        }
+
+        .sen2 {
+            font-weight: 100;
+            color: aliceblue;
+            margin-left: 3px;
+            margin-top: 0px;
+        }
+
+        .first3 {
+            margin-top: 8px;
+            margin-left: 20px;
+            padding: 3px;
+            width: 600px;
+            height: 43px;
+            display: flex;
+            border-radius: 4px;
+
+
+        }
+
+        .first3.pop {
+            background-color: orange;
+        }
+
+        #item {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            background-color: #dadada;
+            border: none;
+            padding-left: 9px;
+            padding-right: 5px;
+            width: 49px;
+        }
+
+        #item option {
+
+            background-color: #ffffff;
+        }
+
+        input {
+            padding-left: 15px;
+        }
+
+        .srchbox {
+            outline: none;
+            background-color: #ffffff;
+            width: 500px;
+            border: none;
+        }
+
+        .srchbox::placeholder {
+            padding-left: 0px;
+            font-size: medium;
+        }
+
+        .srchicon {
+            background-color: #f4b25c;
+            min-width: 51px;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+
+        .srchicon:hover {
+            background-color: rgb(235, 175, 64);
+        }
+
+        .srchicon i {
+            padding-top: 5px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            font-size: 30px;
+        }
+
+        .first4 {
+
+            position: relative;
+            padding-left: 10px;
+            padding-top: 22px;
+            display: flex;
+            height: 51px;
+            width: 85px;
+            margin-top: 5px;
+            margin-left: 14px;
+        }
+
+        .first4:hover {
+            border: 1px solid rgb(255, 255, 255);
+        }
+
+
+
+        .first4:hover .dropdown-content {
+            display: block;
+            z-index: 1;
+
+        }
+
+
+        .indiaflag {
+            width: 25px;
+            height: 18px;
+        }
+
+        .sen3 {
+
+            margin-left: 5px;
+            font-weight: 700;
+            color: #dddada;
+        }
+
+        #chevron {
+            color: #a1a1a1;
+            font-size: 8px;
+            margin-left: 4px;
+            margin-top: 8px;
+
+        }
+
+
+        .radiocontainer {
+
+            margin-left: 25px;
+            display: inline-block;
+            position: relative;
+
+            padding-left: 25px;
+            font-weight: 500;
+            font-size: 13px;
+        }
+
+        .radiocontainer input {
+
+            display: none;
+        }
+
+        .radiocontainer .circle {
+
+            display: inline-block;
+            position: absolute;
+            height: 17px;
+            left: 0;
+            top: 17;
+            width: 17px;
+            border: 1px solid gray;
+            border-radius: 50%;
+            background-color: #eee;
+        }
+
+        .radiocontainer:hover {
+            text-decoration: underline;
+            color: #e87121;
+        }
+
+        /* .radiocontainer:hover .circle{
+    background-color: #ccc;
+} */
+        /* .radiocontainer input:checked + .circle{
+    background-color: rgb(255, 255, 255);
+} */
+
+        .radiocontainer .engcheck:checked+.circle::after {
+            content: "";
+            height: 8px;
+            width: 8px;
+            border-radius: 50%;
+            top: 50%;
+            background-color: #e87121;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+
+        }
+
+        .radiocontainer:hover input+.circle::after {
+            content: "";
+            height: 8px;
+            width: 8px;
+            border-radius: 50%;
+            top: 50%;
+            background-color: #e87121;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+
+        }
+
+        .dropdown-content {
+            margin-top: 27px;
+            margin-left: -10px;
+            display: none;
+            border-radius: 6px;
+            position: absolute;
+            background-color: #ffffff;
+            height: 400px;
+            width: 260px;
+        }
+
+        .dropdown-content .radiocontainer {
+            padding-top: 15px;
+        }
+
+        .hor {
+            margin-top: 10px;
+            margin-left: 25px;
+            width: 160px;
+            height: 0.5px;
+            background: rgb(140, 140, 140);
+        }
+
+        .dropdown-content .lrnmr {
+            margin-top: 15px;
+            margin-left: 50px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .dropdown-content .lrnmr a {
+            text-decoration: none;
+            color: #408cd0;
+        }
+
+        .lrnmr:hover {
+            text-decoration: underline #e87121;
+        }
+
+        .langline {
+            display: flex;
+            margin-left: 19px;
+            margin-top: 13px;
+        }
+
+        .langline .sen4 {
+            color: #4f4f4f;
+            margin-left: 4px;
+            margin-top: 4px;
+            font-size: 13px;
+        }
+
+        .shape {
+
+            height: 15px;
+            width: 15px;
+            background-color: white;
+            transform: rotate(45deg);
+            margin-left: 63px;
+            margin-top: -5px;
+            border-bottom: none;
+            border-right: none;
+        }
+
+        .first5 {
+            position: relative;
+            padding-left: 8px;
+            padding-top: 8px;
+            height: 51px;
+            width: 150px;
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+
+        .first5:hover {
+
+            border: 1px solid white;
+
+        }
+
+        .first5:hover .dropdown2 {
+            display: block;
+        }
+
+        .dropdown2 {
+            /* border: 1px solid black; */
+            display: none;
+            border-radius: 6px;
+            margin-left: -240px;
+            margin-top: 9px;
+            min-width: 500px;
+            min-height: 445px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .sen5 {
+            color: #fefefe;
+            font-size: 13px;
+            font-weight: 400;
+        }
+
+        .sen6 {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        #chevron1 {
+            color: #a1a1a1;
+            font-size: 8px;
+        }
+
+        .first6 {
+            padding-left: 8px;
+            padding-top: 8px;
+            height: 51px;
+            width: 80px;
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+
+        .first6:hover {
+            border: 1px solid white;
+
+        }
+
+        .sen7 {
+            color: #fefefe;
+            font-size: 13px;
+            font-weight: 400;
+        }
+
+        .sen8 {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .first7 {
+            display: flex;
+            margin-top: 5px;
+            margin-left: 8px;
+            width: 105px;
+            height: 51px;
+
+        }
+
+        .first7:hover {
+            border: 1px solid white;
+        }
+
+        .sen9 {
+            color: #ffffff;
+            margin-top: 25px;
+            margin-left: 15px;
+            font-weight: 600;
+        }
+
+        #carts {
+
+            color: white;
+            font-size: 50px;
+            animation: animate 5s linear infinite;
+            animation-delay: -4s;
+        }
+
+        @keyframes animate {
+
+            0%,
+            5%,
+            10%,
+            15%,
+            20% {
+                transform: translateX(0px);
+            }
+
+            25%,
+            30%,
+            35%,
+            40% {
+                transform: translateX(10px);
+            }
+
+            45%,
+            50%,
+            55%,
+            60% {
+                transform: translateX(20px);
+            }
+
+            65%,
+            70%,
+            75%,
+            80% {
+                transform: translateX(10px);
+            }
+
+            85%,
+            90%,
+            95%,
+            100% {
+                transform: translateX(0px);
+            }
+
+            /* {
+                transform: translateX(15px)
+            }
+            {
+                transform: translateX(-30px);
+            }
+            75%{
+                transform: translateX(-30px);
+            } */
+
+        }
+
+        .acsign {
+            box-shadow: 0 3px 4px 2px gray;
+            margin-top: 20px;
+            margin-left: 125px;
+            outline: none;
+            font-weight: 100;
+            border: none;
+            border-radius: 10px;
+            background-color: #ffd814;
+            width: 250px;
+            height: 35px;
+        }
+
+        .sen10 {
+            margin-top: 15px;
+            color: #828181;
+            font-size: 11px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .sen10 a {
+            color: #408cd0;
+            text-decoration: none;
+        }
+
+        .sen10 a:hover {
+            color: #e87121;
+            text-decoration: underline;
+        }
+
+        .hor1 {
+            margin-left: 30px;
+            width: 440px;
+            margin-top: 25px;
+            height: 0px;
+            border: 1px solid rgb(232, 232, 232);
+        }
+
+        .part1 {
+            margin-left: 30px;
+            margin-top: 22px;
+            width: 200px;
+            line-height: 25px;
+        }
+
+        .sen11 {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .yourlist {
+            color: #828181;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        .yourlist:hover {
+            color: #e87121;
+            text-decoration: underline;
+
+        }
+
+        .vertline {
+            height: 230px;
+            margin-top: -140px;
+            margin-left: 225px;
+            width: 1px;
+            border: 1px solid rgb(232, 232, 232);
+        }
+
+        .part2 {
+            width: 200px;
+            line-height: 25px;
+            float: right;
+            margin-right: 22px;
+            margin-top: -243px;
+        }
+
+        .sen12 {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .yourlist1 {
+            color: #828181;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        .shape2 {
+            position: absolute;
+            height: 15px;
+            width: 15px;
+            background-color: white;
+            margin-left: 363px;
+            margin-top: -6px;
+            border-bottom: none;
+            border-right: none;
+            transform: rotate(45deg);
+
+        }
+
+        .nav2 {
+            width: 100%;
+            background-color: #232f3e;
+            height: 40px;
+            display: flex;
+        }
+
+        .sec {
+            display: flex;
+            margin-left: 12px;
+            width: 55px;
+
+            border-radius: 2px;
+        }
+
+        .sec:hover {
+            border: 1px solid white;
+        }
+
+
+
+        .forall {
+
+            margin-left: 30px;
+            margin-top: 13px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .sec2 {
+            width: 125px;
+            padding-top: 10px;
+
+            margin-left: 5px;
+            border-radius: 2px;
+
+        }
+
+        .sec2:hover {
+            border: 1px solid white;
+        }
+
+        .sec2 a {
+
+            margin-left: 13px;
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .sec3 {
+
+            width: 40px;
+            margin-left: 2px;
+            padding-top: 10px;
+            border-radius: 2px;
+        }
+
+        .sec3:hover {
+            border: 1px solid white;
+        }
+
+        .sec3 a {
+            margin-left: 8px;
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .sec4 {
+            border-radius: 2px;
+            width: 90px;
+            margin-left: 2px;
+            padding-top: 10px;
+        }
+
+        .sec4:hover {
+            border: 1px solid white;
+        }
+
+        .sec4 a {
+            margin-left: 6px;
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .sec5 {
+            border-radius: 2px;
+            width: 63px;
+            margin-left: 2px;
+            padding-top: 10px;
+        }
+
+        .sec5:hover {
+            border: 1px solid white;
+        }
+
+        .sec5 a {
+            margin-left: 6px;
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .sec6 {
+            border-radius: 2px;
+            width: 100px;
+            margin-left: 2px;
+            padding-top: 10px;
+        }
+
+        .sec6:hover {
+            border: 1px solid white;
+        }
+
+        .sec6 a {
+            margin-left: 5px;
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .sec7 {
+            border-radius: 2px;
+            width: 125px;
+            margin-left: 2px;
+            padding-top: 10px;
+        }
+
+        .sec7:hover {
+            border: 1px solid white;
+        }
+
+        .sec7 a {
+            margin-left: 5px;
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .sec8 {
+            border-radius: 2px;
+            width: 105px;
+            margin-left: 2px;
+            padding-top: 10px;
+        }
+
+        .sec8:hover {
+            border: 1px solid white;
+        }
+
+        .sec8 a {
+            margin-left: 5px;
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .sec9 {
+            border-radius: 2px;
+            width: 80px;
+            margin-left: 2px;
+            padding-top: 10px;
+        }
+
+        .sec9:hover {
+            border: 1px solid white;
+        }
+
+        .sec9 a {
+            margin-left: 5px;
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .sec10 {
+            border-radius: 2px;
+            width: 64px;
+            margin-left: 2px;
+            padding-top: 10px;
+        }
+
+        .sec10:hover {
+            border: 1px solid white;
+        }
+
+        .sec10:hover .inter {
+            display: block;
+        }
+
+        .sec10 a {
+            margin-left: 5px;
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .inter {
+            margin-top: 7px;
+            margin-left: -5px;
+            position: absolute;
+            border-radius: 3px;
+            width: 320px;
+            height: 500px;
+            background-color: #ffffff;
+            display: none;
+        }
+
+        .inter img {
+            margin-left: 20px;
+            margin-top: 20px;
+            width: 280px;
+            height: 460px;
+        }
+
+        .shape3 {
+            position: absolute;
+            margin-left: 48px;
+            margin-top: -7px;
+            height: 15px;
+            width: 15px;
+            background-color: white;
+            transform: rotate(45deg);
+        }
+
+        .sec11 {
+
+            padding-top: 10px;
+            margin-left: 84px;
+            border-radius: 2px;
+        }
+
+        .sec11:hover {
+            border: 1px solid white;
+        }
+
+        .sec11 a {
+
+            padding-left: 4px;
+            padding-right: 4px;
+            font-size: 15px;
+            text-decoration: none;
+            color: white;
+
+        }
+
+        .slidebar {
+/* overflow: hidden; */
+            position: fixed;
+            height: 100vh;
+            left: -360px;
+            width: 360px;
+
+            background-color: #ffffff;
+        }
+
+
+        .slidebar header {
+            display: flex;
+            background-color: #232f3e;
+            width: 100%;
+            height: 51px;
+        }
+
+        #usericon {
+            margin-top: 11px;
+            margin-left: 38px;
+            color: white;
+            font-size: 32px;
+        }
+
+        .helsign {
+
+            margin-left: 9px;
+            padding-top: 16px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 19px;
+        }
+
+        .slidebar ul .ul1 {
+            margin-bottom: 12px;
+            margin-left: 39px;
+            margin-top: 22px;
+            font-size: 19px;
+            font-weight: 600;
+        }
+
+        .slidebar ul li {
+
+            list-style: none;
+            background-color: #ffffff;
+            width: 100%;
+            font-size: 14px;
+            padding-left: 39px;
+            padding-top: 14px;
+            padding-bottom: 14px;
+        }
+
+        .slidebar ul li:hover {
+            background-color: #eaeded;
+        }
+
+        .slidebar ul li:hover #slchevron {
+            color: rgb(40, 40, 40);
+        }
+
+        .vertline1 {
+            width: 100%;
+            margin-top: 5px;
+            border: 1px solid rgb(233, 233, 233);
+        }
+
+        .mainslider {
+            height: 100vh;
+            overflow: scroll;
+            width: 360px;
+        }
+
+        #slchevron {
+            color: #a1a1a1;
+            margin-right: 14px;
+            float: right;
+            font-size: 23px;
+        }
+
+        #sldown {
+            color: #a1a1a1;
+            font-size: 18px;
+            margin-left: 8px;
+        }
+
+        .menu {
+            position: absolute;
+            top: 67px;
+            left: 12px;
+
+        }
+
+        #menu {
+            font-size: 30px;
+            color: rgb(255, 255, 255);
+
+        }
+
+        .menu.click {
+            left: 365px;
+        }
+
+        /* .footer {
+            margin-top: 150px;
+        } */
+
+        .foot1 {
+            width: 100%;
+            height: 45px;
+            background-color: #333f4c;
+        }
+
+        .foot1:hover {
+            background-color: #485769;
+        }
+
+        .foot1 h5 {
+            text-align: center;
+            font-weight: 500;
+            color: rgb(246, 246, 246);
+            padding-top: 15px;
+        }
+
+        .foot2 {
+            width: 100%;
+            height: 520px;
+            background-color: #232f3e;
+        }
+
+        .footlist {
+            display: flex;
+            gap: 105px;
+            padding-top: 50px;
+            padding-left: 220px;
+        }
+
+        .fl1 {
+            width: fit-content;
+        }
+
+        .fname {
+            margin-bottom: 15px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .flist {
+            display: block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: rgb(223, 223, 223);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .flist:hover {
+            text-decoration: underline;
+        }
+
+        .footline {
+            margin-top: 40px;
+            width: 100%;
+            height: 0.5px;
+            background-color: rgb(100, 100, 100);
+        }
+
+        .foot3 {
+            /* position: relative; */
+            display: flex;
+        }
+
+        .foot3 .footlang {
+            margin-top: 55px;
+            margin-left: 100px;
+            border-radius: 3px;
+            display: flex;
+            padding-left: 10px;
+            padding-top: 7px;
+            font-size: 14px;
+
+            border: 1px solid gray;
+            width: 120px;
+            height: 32px;
+        }
+
+        .footlang p {
+            color: rgb(208, 207, 207);
+            padding-left: 10px;
+        }
+
+        .footlang i {
+            color: rgb(208, 207, 207);
+
+        }
+
+        .footlang:hover .dropdown-content {
+            display: block;
+            z-index: 1;
+        }
+
+        .foot4 {
+            /* position: relative; */
+            width: 100%;
+            height: 300px;
+            background-color: #131a22;
+        }
+
+        .ft1 {
+            display: flex;
+            padding-top: 40px;
+            margin-left: 240px;
+            gap: 120px;
+        }
+
+        .ft1 a {
+            font-size: 12px;
+            text-decoration: none;
+            color: rgb(108, 108, 108);
+        }
+
+        .ft11 {
+            color: rgb(218, 218, 218);
+            font-size: 12px;
+        }
+
+        .ft2 {
+            display: flex;
+            padding-top: 40px;
+            margin-left: 240px;
+            gap: 105px;
+        }
+
+        .ft2 a {
+            font-size: 12px;
+            text-decoration: none;
+            color: rgb(108, 108, 108);
+        }
+
+        .ftlst {
+            margin-left: 40px;
+        }
+
+        .ftlst2 {
+            margin-left: -15px;
+        }
+
+        .ft11:hover {
+            text-decoration: underline;
+        }
+
+        .lastline {
+            margin-top: 40px;
+            text-align: center;
+            color: rgb(230, 230, 230);
+            font-size: 13px;
+        }
+
+        .lastup {
+            margin-top: 10px;
+
+            text-align: center;
+            color: rgb(230, 230, 230);
+            font-size: 13px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+         <div class="menu" onclick="show1()">
+            <i class='bx bx-menu' id="menu"></i>
+        </div>
+
+        <div class="slidebar">
+            <header><i id="usericon" class='bx bxs-user-circle'></i>
+                <div>
+                    <p class="helsign">Hello, sign in</p>
+                </div>
+            </header>
+            <div class="mainslider">
+                <ul>
+                    <p class="ul1">Trending</p>
+                    <li>Best Sellers</li>
+                    <li>New Releases</li>
+                    <li> Movers and Shakers</li>
+                    <div class="vertline1"></div>
+                    <p class="ul1">Digital Content And Devices</p>
+                    <li>Echo & Alexa<i id="slchevron" class='bx bxs-chevron-right'></i></li>
+                    <li>Fire TV<i id="slchevron" class='bx bxs-chevron-right'></i></li>
+                    <li>Kindle E-Readers & eBooks<i id="slchevron" class='bx bxs-chevron-right'></i></li>
+                    <li>Audible Audiobooks<i id="slchevron" class='bx bxs-chevron-right'></i></li>
+                    <li>Amazon Prime Video<i id="slchevron" class='bx bxs-chevron-right'></i></li>
+                    <li>Amazon Prime Music<i id="slchevron" class='bx bxs-chevron-right'></i></li>
+                    <div class="vertline1"></div>
+
+                    <p class="ul1"> Shop By Category</p>
+                    <li>Mobiles, Computers<i id="slchevron" class='bx bxs-chevron-right'></i></li>
+                    <li>TV, Appliances, Electronics<i id="slchevron" class='bx bxs-chevron-right'></i></li>
+                    <li>Men's Fashion<i id="slchevron" class='bx bxs-chevron-right'></i></li>
+                    <li>Women's Fashion<i id="slchevron" class='bx bxs-chevron-right'></i></li>
+                    <li> See All<i id="sldown" class='bx bxs-chevron-down'></i></li>
+
+                    <div class="vertline1"></div>
+                    <p class="ul1"> Programs & Features</p>
+                    <li> Gift Cards & Mobile Recharges<i id="slchevron" class='bx bxs-chevron-right'></i></li>
+                    <li> Amazon Launchpad</li>
+                    <li> Flight Tickets</li>
+                    <li> Clearance store</li>
+                    <div class="vertline1"></div>
+                    <p class="ul1">Help & Settings</p>
+                    <li> Your Account</li>
+                    <li> Customer Service</li>
+                    <li> Sign in</li>
+
+
+                </ul>
+            </div>
+        </div>
+       
+            <div class="nav">
+                <div class="first">
+                    <img src="Amazon-Logo-White.png" class="amazlogo">
+                    <h4 class="sen1">.in</h4>
+                </div>
+                <div class="first2">
+                    <i style="color: aliceblue; font-size: 22px; margin-top: 8px;" class='bx bx-map'></i>
+                    <h5 class="sen2">Hello <br><strong>Select your address</strong></h5>
+
+                </div>
+
+                <div id="first3id" class="first3">
+
+                    <select id="item" onchange="onc()">
+                        <option class="abc" selected="selected" value="All Categories">All Categories</option>
+                        <option value="Alexa Skills">Alexa Skills</option>
+                        <option value="Amazon Devices">Amazon Devices</option>
+                        <option value="Amazon Fashion">Amazon Fashion</option>
+                        <option value="Amazon Pharmacy">Amazon Pharmacy</option>
+                        <option value="Appliances">Appliances</option>
+                        <option value="Apps & Games">Apps & Games</option>
+                        <option value="Baby">Baby</option>
+                        <option value="Beauty">Beauty</option>
+                        <option value="Books">Books</option>
+                        <option value="Car & Motorbike">Car & Motorbike</option>
+                        <option value="Clothing and Accessories">Clothing and Accessories</option>
+                    </select>
+                    <input type="text" id="srchboxid" class="srchbox" placeholder="Search Amazon.in">
+                    <div class="srchicon">
+                        <i class='bx bx-search-alt-2'></i>
+                    </div>
+                </div>
+                <div class="first4">
+
+                    <img class="indiaflag" src="pngtree-the-national-flag-of-india-png-image_2845292.jpg">
+                    <h4 class="sen3">EN</h4><i id="chevron" class='bx bxs-down-arrow'></i>
+                    <div class="dropdown-content">
+                        <div class="shape"></div>
+
+                        <label class="radiocontainer"> English - EN
+                            <input type="radio" class="engcheck" checked>
+                            <span class="circle"></span>
+                        </label>
+                        <div class="hor"></div>
+                        <label class="radiocontainer"> हिन्दी - HI
+                            <input type="radio">
+                            <span class="circle"></span>
+                        </label>
+                        <br>
+                        <label class="radiocontainer"> தமிழ் - TA
+                            <input type="radio">
+                            <span class="circle"></span>
+                        </label>
+                        <br>
+                        <label class="radiocontainer">తెలుగు - TE
+                            <input type="radio">
+                            <span class="circle"></span>
+                        </label>
+                        <br>
+                        <label class="radiocontainer"> ಕನ್ನಡ - KN
+                            <input type="radio">
+                            <span class="circle"></span>
+                        </label>
+                        <br>
+                        <label class="radiocontainer"> മലയാളം - ML
+                            <input type="radio">
+                            <span class="circle"></span>
+                        </label>
+                        <br>
+                        <label class="radiocontainer"> বাংলা - BN
+                            <input type="radio">
+                            <span class="circle"></span>
+                        </label><br>
+                        <label class="radiocontainer"> मराठी - MR
+                            <input type="radio">
+                            <span class="circle"></span>
+                        </label><br>
+
+                        <p class="lrnmr"><a href="">Learn more</a></p>
+
+                        <div class="hor"></div>
+                        <div class="langline">
+                            <img src="pngtree-the-national-flag-of-india-png-image_2845292.jpg" class="indiaflag"
+                                alt="">
+                            <h6 class="sen4">You are shopping on Amazon.in</h6>
+                        </div>
+                        <p class="lrnmr"><a href="">Change country/region</a></p>
+
+                    </div>
+
+
+
+
+                </div>
+
+                <div class="first5">
+                    <p class="sen5">Hello, sign in </p>
+                    <p class="sen6">Account & Lists <i id="chevron1" class='bx bxs-down-arrow'></i></p>
+
+                    <div class="dropdown2">
+                        <div class="shape2"></div>
+                        <button class="acsign">Sign in</button>
+                        <p class="sen10">New customer? <a href=""> Start here.</a></p>
+                        <div class="hor1"></div>
+                        <div class="part1">
+                            <p class="sen11">Your Lists</p>
+                            <a class="yourlist" href=""> Create a Wish List</a><br>
+                            <a class="yourlist" href=""> Wish from Any Website</a><br>
+                            <a class="yourlist" href=""> Baby Wishlist</a><br>
+                            <a class="yourlist" href=""> Discover Your Style</a><br>
+                            <a class="yourlist" href=""> Explore Showroom</a>
+
+                        </div>
+                        <div class="vertline"></div>
+                        <div class="part2">
+                            <p class="sen12">Your Account</p>
+                            <a href="" class="yourlist1"> Your Orders</a><br>
+                            <a href="" class="yourlist1"> Your Wish List</a><br>
+                            <a href="" class="yourlist1">Your Recommendations</a><br>
+                            <a href="" class="yourlist1">Your Prime Membership</a><br>
+                            <a href="" class="yourlist1">Your Prime Video</a><br>
+                            <a href="" class="yourlist1">Your Subscribe & Save Items</a><br>
+                            <a href="" class="yourlist1">Memberships & Subscriptions</a><br>
+                            <a href="" class="yourlist1">Your Free Amazon Business Account</a><br>
+                            <a href="" class="yourlist1"> Your Seller Account</a><br>
+                            <a href="" class="yourlist1">Manage Your Content and Devices</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="first6">
+                    <p class="sen7">Returns</p>
+                    <p class="sen8">& Orders</p>
+                </div>
+                <div class="first7">
+                    <i id="carts" class='bx bx-cart'></i>
+                    <p class="sen9">Cart</p>
+                </div>
+            </div>
+            <div class="nav2" id="nav2">
+                <div class="sec">
+
+                    <a href="" class="forall">All</a>
+                </div>
+
+                <div class="sec2"><a href="">Amazon miniTV</a></div>
+                <div class="sec3"><a href=""> Sell</a></div>
+                <div class="sec4"><a href="">Best Sellers</a></div>
+                <div class="sec5"><a href=""> Mobiles</a></div>
+                <div class="sec6"><a href="">Today's Deals</a></div>
+                <div class="sec7"> <a href="">Customer Service</a></div>
+                <div class="sec8"><a href=""> New Releases</a></div>
+                <div class="sec9"><a href=""> Electronics</a></div>
+                <div class="sec10"> <a href="">Prime<i id="chevron" class='bx bxs-down-arrow'></i></a>
+                    <div class="inter">
+                        <div class="shape3"></div>
+                        <img src="Screenshot (10).png" alt="">
+                    </div>
+                </div>
+                <div class="sec11">
+                    <a href="">New Launches from Mobiles,Electronics & more | Shop now
+                    </a>
+                </div>
+
+            </div>
+        <div>
+            <div class="footer">
+                <div class="foot1">
+                    <h5>Back to top</h5>
+                </div>
+                <div class="foot2">
+                    <div class="footlist">
+                        <div class="fl1">
+                            <p class="fname">Get to Know Us</p>
+                            <a href="" class="flist">About Us</a>
+                            <a href="" class="flist">Careers</a>
+                            <a href="" class="flist">Press Releases</a>
+                            <a href="" class="flist">Amazon Science</a>
+                        </div>
+                        <div class="fl2">
+                            <p class="fname">Connect with Us</p>
+                            <a href="" class="flist">Facebook</a>
+                            <a href="" class="flist">Twitter</a>
+                            <a href="" class="flist">Instagram</a>
+                        </div>
+                        <div class="fl3">
+                            <p class="fname">Make Money with Us</p>
+                            <a href="" class="flist">Sell on Amazon</a>
+                            <a href="" class="flist">Sell under Amazon Accelerator</a>
+                            <a href="" class="flist">Protect and Build Your Brand</a>
+                            <a href="" class="flist">Amazon Global Selling</a>
+                            <a href="" class="flist">Become an Affiliate</a>
+                            <a href="" class="flist">Fulfilment by Amazon</a>
+                            <a href="" class="flist">Advertise Your Products</a>
+                            <a href="" class="flist">Amazon Pay on Merchants</a>
+                        </div>
+                        <div class="fl4">
+
+                            <p class="fname">Let Us Help You</p>
+                            <a href="" class="flist">COVID-19 and Amazon</a>
+                            <a href="" class="flist">Your Account</a>
+                            <a href="" class="flist">Returns Centre</a>
+                            <a href="" class="flist">100% Purchase Protection</a>
+                            <a href="" class="flist">Amazon App Download</a>
+                            <a href="" class="flist">Help</a>
+                        </div>
+
+                    </div>
+                    <div class="footline">
+
+                    </div>
+                    <div class="foot3">
+                        <a href="index.html"><img
+                                style=" width: 85px; height: 28px; margin-left: 530px; margin-top: 60px;"
+                                src="Amazon-Logo-White.png" alt=""></a>
+
+                        <div class="footlang">
+                            <i class='bx bx-globe'></i>
+                            <p>English</p>
+                            <div
+                                style="display: block; font-size: 6px; margin-left: 25px; margin-top: 2px; width: 8px;">
+                                <i class='bx bxs-up-arrow'></i>
+                                <i class='bx bxs-down-arrow'></i>
+                            </div>
+
+                            <div class="dropdown-content">
+                                <div class="shape4" style="height: 15px;
+                                width: 15px;
+                                background-color: white;
+                                transform: rotate(45deg);
+                                margin-left: 101px;
+                                margin-top: -5px;
+                                border-bottom: none;
+                                border-right: none;"></div>
+
+                                <label class="radiocontainer"> English - EN
+                                    <input type="radio" class="engcheck" checked>
+                                    <span class="circle"></span>
+                                </label>
+                                <div class="hor"></div>
+                                <label class="radiocontainer"> हिन्दी - HI
+                                    <input type="radio">
+                                    <span class="circle"></span>
+                                </label>
+                                <br>
+                                <label class="radiocontainer"> தமிழ் - TA
+                                    <input type="radio">
+                                    <span class="circle"></span>
+                                </label>
+                                <br>
+                                <label class="radiocontainer">తెలుగు - TE
+                                    <input type="radio">
+                                    <span class="circle"></span>
+                                </label>
+                                <br>
+                                <label class="radiocontainer"> ಕನ್ನಡ - KN
+                                    <input type="radio">
+                                    <span class="circle"></span>
+                                </label>
+                                <br>
+                                <label class="radiocontainer"> മലയാളം - ML
+                                    <input type="radio">
+                                    <span class="circle"></span>
+                                </label>
+                                <br>
+                                <label class="radiocontainer"> বাংলা - BN
+                                    <input type="radio">
+                                    <span class="circle"></span>
+                                </label><br>
+                                <label class="radiocontainer"> मराठी - MR
+                                    <input type="radio">
+                                    <span class="circle"></span>
+                                </label><br>
+
+                                <p class="lrnmr"><a href="">Learn more</a></p>
+
+                                <div class="hor"></div>
+                                <div class="langline">
+                                    <img src="pngtree-the-national-flag-of-india-png-image_2845292.jpg"
+                                        class="indiaflag" alt="">
+                                    <h6 class="sen4">You are shopping on Amazon.in</h6>
+                                </div>
+                                <p class="lrnmr"><a href="">Change country/region</a></p>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <p style="color: #efefef; text-align: center; font-size: 13px; margin-top: 24px;">Australia
+                        &nbsp;&nbsp;
+                        Brazil &nbsp;&nbsp;Canada&nbsp;&nbsp; China&nbsp;&nbsp; France &nbsp;&nbsp;Germany&nbsp;&nbsp;
+                        Italy&nbsp;&nbsp; Japan&nbsp;&nbsp; Mexico &nbsp;&nbsp;Netherlands &nbsp;&nbsp;Poland
+                        &nbsp;&nbsp;Singapore &nbsp;&nbsp;Spain&nbsp;&nbsp; Turkey &nbsp;&nbsp;United Arab Emirates</p>
+                    <p style="color: #efefef; text-align: center;  font-size: 13px;  margin-top: 10px;">United
+                        Kingdom&nbsp;&nbsp; United States</p>
+
+
+                </div>
+                <div class="foot4">
+                    <div class="ft1">
+                        <span>
+                            <p class="ft11">AbeBooks</p>
+                            <a href="">Books, art <br>
+                                & collectibles</a>
+                        </span>
+
+                        <span>
+                            <p class="ft11">Amazon Web Services</p>
+                            <a href="">Scalable Cloud <br>
+                                Computing Services </a>
+                        </span>
+                        <span>
+                            <p class="ft11">Audible</p>
+                            <a href="">Download <br>
+                                Audio Books </a>
+                        </span>
+                        <span>
+                            <p class="ft11">DPReview</p>
+                            <a href=""> Digital <br>
+                                Photography </a>
+                        </span>
+                        <span>
+                            <p class="ft11">IMDb</p>
+                            <a href="">Movies, TV <br>
+                                & Celebrities</a>
+                        </span>
+                    </div>
+                    <div class="ft2">
+                        <span>
+                            <p class="ft11">Shopbop</p>
+                            <a href="">Designer <br>
+                                Fashion Brands</a>
+                        </span>
+                        <span>
+                            <p class="ft11"> Amazon Business</p>
+                            <a href="">Everything For <br>
+                                Your Business</a>
+                        </span>
+                        <span class="ftlst">
+                            <p class="ft11"> Prime Now</p>
+                            <a href="">2-Hour Delivery <br>
+                                on Everyday Items </a>
+                        </span>
+                        <span class="ftlst2">
+                            <p class="ft11">Amazon Prime Music</p>
+                            <a href="">100 million songs, ad-free <br>
+                                Over 15 million podcast episodes</a>
+                        </span>
+                    </div>
+                    <p class="lastline">Conditions of Use & Sale &nbsp;&nbsp; Privacy Notice&nbsp;&nbsp; Interest-Based
+                        Ads</p>
+                    <p class="lastup">© 1996-2023, Amazon.com, Inc. or its affiliates</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+
+
+
+        const sahil = document.getElementById("item");
+        // let abcd = false;
+        function onc() {
+            const selectedOption = sahil.options[sahil.selectedIndex].text;
+            const selectedOptionLength = selectedOption.length;
+            sahil.style.width = (selectedOptionLength * 9 + 25) + "px";
+
+
+            //     const selectedOption = sahil.value;
+            // const selectedOptionLength = selectedOption.length;
+            // sahil.style.width = selectedOptionLength * 20 + "px";
+
+
+            //     if (pqr.value === 'All Categories') {
+            //         if (abcd) {
+            //             pqr.style.width = "fit-content";
+            //             abcd = false;
+            //         }
+            //         else {
+            //             pqr.style.width = "36px";
+            //             abcd = true;
+            //         }
+            //     }
+            //      else {
+            //         pqr.style.width = "fit-content";
+            //     abcd=true;
+            // }
+        }
+
+        const first3id = document.querySelector(".first3");
+        const srchboxid = document.querySelector(".srchbox");
+
+        srchboxid.addEventListener('focus', () => {
+            first3id.classList.add('pop');
+
+
+        })
+        srchboxid.addEventListener('blur', () => {
+            first3id.classList.remove('pop');
+
+
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>
